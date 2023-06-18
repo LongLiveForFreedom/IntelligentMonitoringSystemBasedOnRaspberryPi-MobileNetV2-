@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<form action="{{ url_for('admin_users_delete', user_id=user_id) }}" method="post">
+    <p style="position: absolute; top: 225px; left: 850px;font-size: 30px;">确定要删除用户 "{{ user_data['username'] }}" 吗？</p>
+    <input style="position: absolute; top: 325px; left: 925px;background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px" class="btn btn-danger" type="submit" value="删除">
+    <a style="position: absolute; top: 325px; left: 1025px;background-color: #f80707;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px" href="{{ url_for('admin_users') }}" class="btn btn-default">取消</a>
+</form>
+{% endblock %}

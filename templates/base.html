@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 公共 CSS 文件 -->
+
+    <!-- 子页面自定义 CSS 文件 -->
+    {% block css %}{% endblock %}
+</head>
+
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+background-color: #f8f5f5;">
+    <header style="background-color: #807d7d;
+    color: #fff;
+    text-align: center;
+    padding: 1em;">
+        <!-- 网站头部 -->
+        {% block header %}
+        <nav>
+            <ul class="list" style="display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            list-style-type: none;
+            padding: 0;">
+                <!-- 如果用户已登录，显示用户名和退出登录链接 -->
+                {% if session.get('user_id') %}
+                <li style="margin: 0;
+                padding: 10px;
+                font-size: 24px;
+                line-height: 10px;
+                color: #333;">欢迎 {{ user_data['username'] }}</li>
+                <li style="margin: 0;
+                padding: 10px;
+                font-size: 16px;
+                line-height: 10px;
+                color: #333;"><a href="{{ url_for('logout') }}">退出登录</a></li>
+                {% endif %}
+                <li style="margin: 0;
+                padding: 10px;
+                font-size: 16px;
+                line-height: 10px;
+                color: #333;"><a href="{{ url_for('index') }}">首页</a></li>
+                <li style="margin: 0;
+                padding: 10px;
+                font-size: 16px;
+                line-height: 10px;
+                color: #333;"><a href="{{ url_for('admin_users') }}">管理员</a></li>
+                <li style="margin: 0;
+                padding: 10px;
+                font-size: 16px;
+                line-height: 10px;
+                color: #333;"><a href="{{ url_for('realtime') }}">实时监控画面</a></li>
+            </ul>
+        </nav>
+        {% endblock %}
+    </header>
+    <main>
+        <!-- 子页面内容 -->
+        {% block content %}{% endblock %}
+    </main>
+    <footer style="position: fixed; bottom: 0; left: 0; right: 0;
+        background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;">
+        <!-- 网站底部 -->
+        {% block footer %}
+        <p>版权所有 &copy; 2023-2024</p>
+        {% endblock %}
+    </footer>
+    {% block js %}{% endblock %}
+</body>
+
+</html>

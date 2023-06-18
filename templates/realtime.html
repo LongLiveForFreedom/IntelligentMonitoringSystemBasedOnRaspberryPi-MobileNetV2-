@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>实时画面</title>
+    <style>
+        .myfont{
+                	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size:16px;
+            font-weight:400;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #video-feed {
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <h1>实时画面</h1>
+    <div id="video-container">
+        <img id="video-feed" src="{{ url_for('video_feed') }}">
+    </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+<link rel="stylesheet" type="text/css" href="E:/Desktop/nhk/common.css">
+<h2 style="position: absolute; top: 200px; left: 1000px;">个人信息</h2>
+<p style="position: absolute; top: 260px; left: 1000px;">用户名: {{ user_data['username'] }}</p>
+<p style="position: absolute; top: 320px; left: 1000px;">用户权限: {{ user_data['user_type'] }}</p>
+<p style="position: absolute; top: 380px; left: 1000px;">电子邮件: {{ user_data['email'] }}</p>
+{% endblock %}

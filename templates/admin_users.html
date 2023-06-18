@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2 style="position: absolute; top: 200px; left: 950px;">用户列表</h2>
+<table style="position: absolute; top: 300px; left: 850px;" class="table">
+    <thead>
+        <tr>
+            <th >用户名</th>
+            <th >用户权限</th>
+            <th >操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in user_data %}
+        <tr>
+            <td >{{ user['username'] }}</td>
+            <td >{{ user['user_type'] }}</td>
+            <td>
+                <a style="background-color: #4CAF50;
+                border: none;
+                color: white;
+                cursor: pointer;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                border-radius: 10px" href="{{ url_for('admin_users_edit', user_id = user['user_id']) }}" class="btn btn-sm btn-primary">修改</a>
+                <a style=" left: 1190px;background-color: #f50707;
+                border: none;
+                color: white;
+                cursor: pointer;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                border-radius: 10px" href="{{ url_for('admin_users_delete', user_id = user['user_id']) }}" class="btn btn-sm btn-danger">删除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a style="position: absolute; top: 500px; left: 950px;background-color: #849bed;
+border: none;
+color: white;
+cursor: pointer;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+border-radius: 10px" href="{{ url_for('admin_users_add', user_id = user_data[0]['user_id']) }}" class="btn btn-sm btn-success">添加用户</a> {% endblock %}

@@ -1,0 +1,113 @@
+/* 设置整个页面的默认字体和背景颜色 */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+
+/* 设置头部的背景颜色和文本居中 */
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+
+/* 设置导航菜单列表的样式 */
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #f2f2f2;
+}
+
+
+/* 设置导航菜单列表项的样式 */
+
+li {
+    margin-bottom: 10px;
+    /* 每个 li 之间添加 10px 的下边距 */
+    padding: 10px;
+    /* 添加内边距，增加可读性 */
+    background-color: #f5f5f5;
+    /* 添加背景颜色 */
+    border: 1px solid #ccc;
+    /* 添加边框 */
+    border-radius: 4px;
+    /* 圆角边框，增加美观度 */
+}
+
+
+/* 给导航菜单链接添加样式 */
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: .2em 1em;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #333;
+}
+
+
+/* 设置页脚的样式 */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+}
+
+
+/* 设置按钮的样式 */
+
+button,
+input[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px;
+}
+
+
+/* 设置文本标签的样式 */
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* 设置文本框和密码框的样式 */
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+}
+
+
+/* 设置复选框和单选框的样式 */
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+}
